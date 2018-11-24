@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Fashion" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Fashion" %>">
+    <%#= stylesheet_link_tag 'visitor', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'style', media: 'all', 'data-turbolinks-track' => true %>
+    <%#= stylesheet_link_tag 'bootstrap.min', media: 'all', 'data-turbolinks-track' => true %>
+    <%#= stylesheet_link_tag 'animate.min', media: 'all', 'data-turbolinks-track' => true %>
+    <%#= asset_path 'font-awesome.min', media: 'all', 'data-turbolinks-track' => true %>
+    <%#= stylesheet_link_tag 'font-awesome.min', media: 'all', 'data-turbolinks-track' => true %>
+    <%#= asset_path 'ionicons.min', media: 'all', 'data-turbolinks-track' => true %>
+    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%#= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+       <%#= render 'layouts/messages' %>
+       <%= yield %>
+    </main>
+  </body>
+</html>
