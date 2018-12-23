@@ -49,13 +49,12 @@
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-server "example.com",
-  user: "deploy",
-  roles: %w{web app db}
-#   ssh_options: {
-#     user: "user_name", # overrides user setting above
-#     keys: %w(/home/user_name/.ssh/id_rsa),
-#     forward_agent: false,
-#     auth_methods: %w(publickey password)
-#     # password: "please use keys"
-#   }
+server "184.72.122.220",
+  user: "ubuntu",
+  roles: %w{web app db}, my_property: :my_value
+  set :ssh_options, {
+    user: "ubuntu", 
+    keys: %w(~/rubyapps/spiritofaura.pem),
+    forward_agent: false,
+    auth_methods: %w(publickey)
+  }

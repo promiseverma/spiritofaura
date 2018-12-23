@@ -3,7 +3,7 @@ lock "~> 3.11.0"
 
 set :application, "spiritofaura"
 set :repo_url, "git@github.com:promiseverma/spiritofaura.git"
-
+set :branch, :master
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -18,7 +18,7 @@ set :deploy_to, "/var/www/html/spiritofaura"
 # set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
 
 # Default value for :pty is false
-# set :pty, true
+set :pty, true
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml"
@@ -39,5 +39,5 @@ set :deploy_to, "/var/www/html/spiritofaura"
 # set :ssh_options, verify_host_key: :secure
 
 
-append :linked_files, "config/database.yml", "config/secrets.yml"
+# append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"

@@ -1,5 +1,3 @@
-require 'capistrano/rails'
-require 'capistrano/passenger'
 # Load DSL and set up stages
 require "capistrano/setup"
 
@@ -28,6 +26,8 @@ install_plugin Capistrano::SCM::Git
 #   https://github.com/capistrano/rails
 #   https://github.com/capistrano/passenger
 #
+require 'capistrano/rails'
+require 'capistrano/passenger'
 require "capistrano/rvm"
 
 set :rvm_type, :user
