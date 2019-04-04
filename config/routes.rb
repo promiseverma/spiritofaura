@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   root to: 'visitors#index'
   get 'aboutus', action: :aboutus, controller: 'visitors'
   get 'contactus', action: :contactus, controller: 'visitors'
+  post 'send_message', action: :send_message, controller: 'visitors'
   resources :details
 end

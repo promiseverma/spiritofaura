@@ -14,15 +14,16 @@
 
 		<div class="wow fadeInUp col-md-6 col-sm-12" data-wow-delay="1.6s">
 			<h1>Let's work together!</h1>
+			<div id="success_message" style="padding: 10px;background-color: lightgreen;font-size: 16px;font-family: -webkit-body;display: none;"></div>
 			<div class="contact-form">
-				<%= form_tag('/contact', remote: true, :id => "contact-form", :method=> 'post') %>
-					<input name="name" type="text" class="form-control" placeholder="Your Name" required>
-					<input name="email" type="email" class="form-control" placeholder="Your Email" required>
-					<textarea name="message" class="form-control" placeholder="Message" rows="4" required></textarea>
-					<div class="contact-submit">
-						<input type="submit" class="form-control submit" value="Send a message">
-					</div>
+				<%= form_for @contact, url: {action: "send_message"},remote: true, html: {class: "nifty_form"} do |f| %>
+					<%= f.text_field :name, :class => "form-control", :placeholder => "Name", :required => true %>
+					<%= f.text_field :email, :class => "form-control", :placeholder => "Email"  %>
+					<%= f.text_field :phone, :class => "form-control", :placeholder => "Phone", :required => true  %>
+					<%= f.text_area :message, :class => "form-control", :placeholder => "Message", :required => true  %>
+					<%= f.submit "Send", :class => "form-control submit"  %>
 				<% end %>
+				
 			</div>
 		</div>
 
